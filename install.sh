@@ -91,9 +91,9 @@ for p in nuevo["installed_packages"]:
 actual["installed_packages"] = lista
 open(sys.argv[2], "w", encoding="utf-8").write(json.dumps(actual, indent="\t") + "\n")
 PY
-ok "Package Control.sublime-settings (Pretty JSON y Case Conversion añadidos)"
+ok "Package Control.sublime-settings (lista de paquetes añadida)"
 
-# 2. Package Control (instalará Pretty JSON y Case Conversion al abrir Sublime)
+# 2. Package Control (instalará los paquetes de la lista al abrir Sublime)
 if [[ -f "$INSTALLED/Package Control.sublime-package" ]]; then
     ok "Package Control ya estaba instalado"
 else
@@ -123,4 +123,4 @@ else
 fi
 
 echo
-ok "Listo. Abre Sublime Text: la primera vez tardará unos segundos en instalar Pretty JSON y Case Conversion."
+ok "Listo. Abre Sublime Text: la primera vez tardará uno o dos minutos en instalar los paquetes."

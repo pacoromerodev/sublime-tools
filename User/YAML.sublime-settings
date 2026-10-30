@@ -1,0 +1,5 @@
+// Ajustes solo para ficheros YAML (application.yml, Kubernetes, GitHub Actions)
+{
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+}

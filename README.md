@@ -11,7 +11,10 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 | `traducir_sublime.py` | Traduce al español los menús (Archivo, Editar, Selección, Buscar, Ver, Ir, Herramientas, Proyecto, Preferencias, Ayuda y la barra lateral) |
 | `User/Preferences.sublime-settings` | Ajustes al estilo Notepad++: recuerda los archivos abiertos, muestra espacios y saltos de línea, usa LF por defecto y deja la barra lateral solo con el árbol de carpetas |
 | `User/Default (OSX).sublime-keymap` | Atajos de teclado al estilo Notepad++ (ver tabla más abajo) |
-| `User/Package Control.sublime-settings` | Instala automáticamente **Pretty JSON** y **Case Conversion** |
+| `User/Package Control.sublime-settings` | Instala automáticamente los paquetes de la tabla de abajo. Si ya tenías otros, se añaden a tu lista sin quitar ninguno |
+| `User/JSON.sublime-settings`, `User/YAML.sublime-settings` | Sangría de 2 espacios en JSON y YAML (el resto de lenguajes no cambia) |
+| `User/Default.sublime-commands` | Añade a la paleta el comando para formatear SQL |
+| `User/Pretty JSON.sublime-settings` | Pretty JSON formatea con 2 espacios, sin reordenar las claves y sin escapar tildes |
 | `install.sh` | Lo instala todo y, además, configura el comando `subl` para la Terminal |
 
 ## Instalación
@@ -25,7 +28,7 @@ No necesita permisos de administrador, así que funciona también en equipos ges
    ./install.sh
    ```
 
-3. Abre Sublime Text. La primera vez tarda unos segundos en instalar los paquetes.
+3. Abre Sublime Text. La primera vez tarda uno o dos minutos en instalar los paquetes. Si MarkdownEditing pregunta si desactivar el Markdown de serie, responde que sí.
 
 Si el instalador no puede descargar Package Control (por ejemplo, por un proxy), revisa la conexión y vuelve a ejecutarlo. También puedes instalarlo a mano desde la paleta de comandos con **Install Package Control**.
 
@@ -43,7 +46,30 @@ Vuelve a ejecutarlo también tras actualizar Sublime Text, para que los menús n
 cd ~/sublime-tools && ./install.sh --restaurar
 ```
 
-Devuelve los menús al inglés y recupera los ajustes que tenías antes de instalar. Los paquetes instalados (Pretty JSON y Case Conversion) se quedan; si quieres quitarlos, usa **Package Control: Remove Package**.
+Devuelve los menús al inglés y recupera los ajustes que tenías antes de instalar. Los paquetes instalados se quedan; si quieres quitarlos, usa **Package Control: Remove Package**.
+
+## Paquetes
+
+| Paquete | Para qué sirve |
+|---|---|
+| **Pretty JSON** | Formatear, minificar y validar JSON |
+| **Pretty YAML** | Formatear YAML (`application.yml`, manifiestos de Kubernetes, GitHub Actions) |
+| **Indent XML** | Formatear XML (`pom.xml`, SOAP) |
+| **SqlBeautifier** | Formatear consultas SQL |
+| **Case Conversion** | snake_case, camelCase, PascalCase, CONSTANT_CASE, kebab-case… |
+| **StringUtilities** | Base64, codificar/decodificar URL, hashes, escapar JSON (por ejemplo, para leer el payload de un JWT) |
+| **Text Pastry** | Insertar números o secuencias en varias líneas a la vez (datos de prueba, IDs) |
+| **Filter Lines** | Dejar solo las líneas que contienen un texto o una regex, o quitarlas. Ideal para logs |
+| **Log Highlight** | Colorear logs por nivel (ERROR, WARN, INFO) |
+| **Compare Side-By-Side** | Comparar dos pestañas lado a lado |
+| **Terraform** | Resaltado de sintaxis de ficheros `.tf` |
+| **Dockerfile Syntax Highlighting** | Resaltado de sintaxis de Dockerfiles |
+| **MarkdownEditing** | Editar Markdown con más comodidad (listas, tablas, atajos) |
+| **MarkdownPreview** | Ver el Markdown renderizado en el navegador |
+| **A File Icon** | Iconos por tipo de fichero en el árbol de la barra lateral |
+| **BracketHighlighter** | Resaltar llaves y corchetes emparejados |
+
+No se incluyen GitGutter (Sublime Text 4 ya marca en el margen las líneas cambiadas en git) ni autocompletado de lenguajes o asistentes de IA, para no duplicar lo que hace el IDE.
 
 ## Atajos al estilo Notepad++
 
@@ -80,6 +106,13 @@ En los MacBook, F3 puede ser una tecla multimedia: púlsala junto con **fn**, o 
 | snake_case, camelCase, PascalCase… | Paleta → **Convert Case** y eliges el formato |
 | Cambiar saltos de línea (LF / CRLF) | Ver → Finales de línea |
 | Reemplazar `..` por un salto de línea | Ctrl+H, activa el botón **.\*** (regex), busca `\.\.` y reemplaza por `\n` |
+| Filtrar un log por texto | Paleta → **Filter Lines: Include Lines With String** (o *With Regex*). Para quitar líneas: **Filter Lines: Exclude Lines With String** |
+| Comparar dos ficheros | Clic derecho en la pestaña de uno → **Compare with active tab** (compara con el que tienes abierto) |
+| Decodificar Base64 o URL | Selecciona el texto → paleta → **String Utilities: Convert From Base64** (o *Decode from URL Notation*) |
+| Convertir un timestamp Unix en fecha | Selecciónalo → paleta → **String Utilities: Convert Unixtime <-> Datetime** |
+| Formatear YAML / XML / SQL | Paleta → **Pretty YAML: Reformat (Pretty Print) YAML**, **Indent XML** o **SQL: Format SQL Statement** |
+| Numerar varias líneas | Pon un cursor en cada línea → paleta → **Text Pastry: From 1 To X** |
+| Ver un Markdown renderizado | Paleta → **Markdown Preview: Preview in Browser** |
 | Unir varias líneas en una | Selecciónalas y pulsa **Ctrl+J** (une con espacios). Con otro separador: Ctrl+H con regex, busca `\n` y reemplaza por `,` |
 
 ## Limitaciones
