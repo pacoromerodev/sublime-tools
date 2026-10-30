@@ -19,6 +19,8 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 
 ## Instalación
 
+> ¿Primera vez? Sigue la **[guía paso a paso](GUIA.md)**, con requisitos, comprobaciones y solución de problemas.
+
 1. Instala **Sublime Text 4**, ábrelo una vez y ciérralo con ⌘Q.
 2. En la Terminal:
 
