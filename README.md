@@ -16,6 +16,8 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 | `User/Default.sublime-commands` | Añade a la paleta el comando para formatear SQL |
 | `User/Pretty JSON.sublime-settings` | Pretty JSON formatea con 2 espacios, sin reordenar las claves y sin escapar tildes |
 | `install.sh` | Lo instala todo y, además, configura el comando `subl` para la Terminal |
+| `offline/` | Package Control, los paquetes y sus librerías ya descargados, para instalar sin internet |
+| `herramientas/preparar_offline.py` | Vuelve a descargar todo lo de `offline/` con las versiones más recientes |
 
 ## Instalación
 
@@ -33,6 +35,20 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 3. Abre Sublime Text. La primera vez tarda uno o dos minutos en instalar los paquetes. Si MarkdownEditing pregunta si desactivar el Markdown de serie, responde que sí.
 
 Si el instalador no puede descargar Package Control (por ejemplo, por un proxy), revisa la conexión y vuelve a ejecutarlo. También puedes instalarlo a mano desde la paleta de comandos con **Install Package Control**.
+
+### Instalar sin internet (por ejemplo, desde un pendrive)
+
+El repositorio ya trae en `offline/` todo lo que normalmente se descarga: Package Control, los paquetes de la lista y las librerías Python que necesitan. Hay variantes para cada build de Sublime Text 4 y para Mac Intel y Apple Silicon; Package Control elige la que toca.
+
+1. En un equipo con internet: `git clone https://github.com/pacoromerodev/sublime-tools.git` y copia la carpeta `sublime-tools` al pendrive.
+2. En el Mac sin internet: copia la carpeta del pendrive a tu carpeta personal (`~/sublime-tools`) y sigue los pasos de instalación de arriba (`cd ~/sublime-tools && bash install.sh`).
+3. Abre Sublime Text y espera uno o dos minutos: Package Control instala los paquetes desde esa copia local, sin conectarse.
+
+El instalador guarda una copia de `offline/` en la carpeta de datos de Sublime (`~/Library/Application Support/Sublime Text/sublime-tools-offline`), así que después puedes quitar el pendrive. Si el Mac tiene internet más adelante, Package Control actualizará los paquetes como siempre.
+
+El Mac necesita Sublime Text 4 y `python3` (viene con las herramientas de línea de comandos de Xcode); ninguno de los dos va incluido.
+
+Para refrescar los paquetes de `offline/` a sus últimas versiones, en un equipo con internet: `python3 herramientas/preparar_offline.py`.
 
 ### Actualizar
 

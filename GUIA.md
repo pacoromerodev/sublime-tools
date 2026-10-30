@@ -83,6 +83,8 @@ cd ~/sublime-tools
 
 Si `git clone` pide usuario y contraseña, es que no tienes acceso a GitHub configurado. Como alternativa, descarga el ZIP desde la página del repositorio (**Code → Download ZIP**), descomprímelo en tu carpeta personal, renombra la carpeta a `sublime-tools` y entra en ella con `cd ~/sublime-tools`.
 
+**Sin internet en el Mac:** clona el repositorio en otro equipo con conexión, copia la carpeta `sublime-tools` a un pendrive y, en el Mac, cópiala a tu carpeta personal como `~/sublime-tools`. La carpeta `offline/` ya trae Package Control, los paquetes y sus librerías, así que el instalador no necesita descargar nada. Si el pendrive está formateado en FAT o exFAT, el script puede perder el permiso de ejecución: lánzalo con `bash install.sh` en lugar de `./install.sh`.
+
 - [ ] La carpeta `~/sublime-tools` existe.
 
 ---
@@ -105,9 +107,10 @@ Verás algo parecido a esto:
  ✓ Preferences.sublime-settings
  ✓ Pretty JSON.sublime-settings
  ✓ YAML.sublime-settings
+==> Copiando paquetes para instalar sin internet
+ ✓ Paquetes copiados en …/Sublime Text/sublime-tools-offline
  ✓ Package Control.sublime-settings (lista de paquetes añadida)
-==> Descargando Package Control
- ✓ Package Control instalado
+ ✓ Package Control instalado (copia incluida en el repositorio)
 ==> Traduciendo menús al español
 Menús traducidos: …
 ==> Configurando el comando subl
@@ -120,12 +123,13 @@ Qué hace el instalador:
 
 1. Guarda una copia de tus ajustes actuales de Sublime, por si quieres volver atrás.
 2. Copia los ajustes y atajos del repositorio.
-3. Añade los paquetes a la lista de Package Control, sin quitar los que ya tuvieras.
-4. Descarga Package Control si no lo tenías.
-5. Traduce los menús al español.
-6. Configura el comando `subl` para abrir carpetas desde la Terminal.
+3. Copia los paquetes de `offline/` a la carpeta de datos de Sublime y los registra como repositorio local de Package Control, para que se instalen sin internet.
+4. Añade los paquetes a la lista de Package Control, sin quitar los que ya tuvieras.
+5. Instala Package Control desde la copia incluida (si no lo tenías).
+6. Traduce los menús al español.
+7. Configura el comando `subl` para abrir carpetas desde la Terminal.
 
-Si aparece `permission denied`, ejecuta antes `chmod +x install.sh`.
+Si aparece `permission denied`, ejecuta antes `chmod +x install.sh` (o lánzalo con `bash install.sh`).
 
 - [ ] El instalador termina con **✓ Listo**.
 
@@ -134,7 +138,7 @@ Si aparece `permission denied`, ejecuta antes `chmod +x install.sh`.
 ## Paso 6. Primer arranque
 
 1. Abre **Sublime Text**.
-2. Espera **uno o dos minutos** sin cerrarlo: Package Control está descargando los paquetes. En la barra de estado (abajo) verás mensajes de progreso.
+2. Espera **uno o dos minutos** sin cerrarlo: Package Control está instalando los paquetes (desde la copia de `offline/`, sin necesidad de internet). En la barra de estado (abajo) verás mensajes de progreso.
 3. Si aparece algún aviso:
    - **MarkdownEditing** pregunta si desactivar el paquete Markdown de serie → responde **que sí**.
    - **Package Control** pide reiniciar → cierra con ⌘Q y vuelve a abrir.
@@ -255,6 +259,7 @@ Para quitar también el comando `subl`: `rm ~/bin/subl`.
 | Problema | Solución |
 |---|---|
 | `Sublime Text está abierto. Ciérralo (⌘Q)` | Ciérralo con ⌘Q (no basta con cerrar la ventana) y vuelve a ejecutar `./install.sh` |
+| Sin internet, los paquetes no se instalan | Comprueba que existe `~/Library/Application Support/Sublime Text/sublime-tools-offline/repository.json` y que en **Preferencias → Ajustes del paquete → Package Control → Ajustes** aparece en `repositories`. Si no, vuelve a ejecutar el instalador desde la carpeta que incluye `offline/` |
 | `No se pudo descargar Package Control` | La red bloquea packagecontrol.io (proxy). Revisa la conexión y vuelve a ejecutar el instalador, o abre Sublime → paleta → **Install Package Control** |
 | Los paquetes no se instalan | Paleta → **Package Control: Satisfy Libraries** y luego reinicia Sublime. Si sigue igual, revisa el registro en **Ver → Mostrar consola** |
 | **Ctrl+H** oculta Sublime | macOS reserva ⌘H para ocultar aplicaciones. Usa **Ctrl+R**, que también abre Reemplazar |

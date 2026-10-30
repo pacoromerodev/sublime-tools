@@ -14,6 +14,8 @@ DATA="${SUBLIME_DATA:-$HOME/Library/Application Support/Sublime Text}"
 USER_DIR="$DATA/Packages/User"
 INSTALLED="$DATA/Installed Packages"
 BACKUP_DIR="$DATA/sublime-tools-backup"
+OFFLINE_SRC="$REPO_DIR/offline"
+OFFLINE_DIR="$DATA/sublime-tools-offline"
 PC_URL="https://packagecontrol.io/Package%20Control.sublime-package"
 
 info()  { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
@@ -39,6 +41,7 @@ if [[ "${1:-}" == "--restaurar" ]]; then
         rm -rf "$BACKUP_DIR"
         ok "Ajustes anteriores recuperados"
     fi
+    rm -rf "$OFFLINE_DIR"
     exit 0
 fi
 
@@ -66,6 +69,17 @@ for f in "$REPO_DIR"/User/*; do
     ok "$nombre"
 done
 
+# Paquetes sin conexión: se copian a la carpeta de datos de Sublime para que
+# Package Control los encuentre aunque luego se quite el pendrive
+REPO_LOCAL=""
+if [[ -f "$OFFLINE_SRC/repository.json" ]]; then
+    info "Copiando paquetes para instalar sin internet"
+    rm -rf "$OFFLINE_DIR"
+    cp -R "$OFFLINE_SRC" "$OFFLINE_DIR"
+    REPO_LOCAL="$OFFLINE_DIR/repository.json"
+    ok "Paquetes copiados en $OFFLINE_DIR"
+fi
+
 # Lista de paquetes: se añade a la que ya hubiera, sin borrar ninguno
 PCS="$USER_DIR/Package Control.sublime-settings"
 if [[ -f "$PCS" && ! -f "$BACKUP_DIR/Package Control.sublime-settings" ]]; then
@@ -73,8 +87,9 @@ if [[ -f "$PCS" && ! -f "$BACKUP_DIR/Package Control.sublime-settings" ]]; then
 elif [[ ! -f "$PCS" ]] && ! grep -qxF "Package Control.sublime-settings" "$BACKUP_DIR/.nuevos" 2>/dev/null; then
     echo "Package Control.sublime-settings" >> "$BACKUP_DIR/.nuevos"
 fi
-python3 -I - "$REPO_DIR/User/Package Control.sublime-settings" "$PCS" <<'PY'
+python3 -I - "$REPO_DIR/User/Package Control.sublime-settings" "$PCS" "$REPO_LOCAL" <<'PY'
 import json, re, sys
+from pathlib import Path
 def cargar(p):
     try:
         t = open(p, encoding="utf-8").read()
@@ -89,6 +104,13 @@ for p in nuevo["installed_packages"]:
     if p not in lista:
         lista.append(p)
 actual["installed_packages"] = lista
+# Repositorio local (offline/repository.json): se quita el de una instalación
+# anterior y se añade el actual
+repos = [r for r in actual.get("repositories", []) if not r.endswith("/sublime-tools-offline/repository.json")]
+if sys.argv[3]:
+    repos.append(Path(sys.argv[3]).as_uri())
+if repos or "repositories" in actual:
+    actual["repositories"] = repos
 open(sys.argv[2], "w", encoding="utf-8").write(json.dumps(actual, indent="\t") + "\n")
 PY
 ok "Package Control.sublime-settings (lista de paquetes añadida)"
@@ -96,6 +118,9 @@ ok "Package Control.sublime-settings (lista de paquetes añadida)"
 # 2. Package Control (instalará los paquetes de la lista al abrir Sublime)
 if [[ -f "$INSTALLED/Package Control.sublime-package" ]]; then
     ok "Package Control ya estaba instalado"
+elif [[ -f "$OFFLINE_SRC/Package Control.sublime-package" ]]; then
+    cp "$OFFLINE_SRC/Package Control.sublime-package" "$INSTALLED/"
+    ok "Package Control instalado (copia incluida en el repositorio)"
 else
     info "Descargando Package Control"
     if curl -fsSL "$PC_URL" -o "$INSTALLED/Package Control.sublime-package"; then

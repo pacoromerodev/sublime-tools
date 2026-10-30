@@ -1,0 +1,541 @@
+{
+	"schema_version": "4.0.0",
+	"packages": [
+		{
+			"name": "Pretty JSON",
+			"author": "dzhibas",
+			"homepage": "https://github.com/dzhibas/SublimePrettyJson",
+			"issues": "https://github.com/dzhibas/SublimePrettyJson/issues",
+			"releases": [
+				{
+					"sublime_text": ">=4000",
+					"version": "1.3.3",
+					"date": "2024-08-10 12:18:25",
+					"url": "./packages/Pretty_JSON-1.3.3.sublime-package",
+					"sha256": "1d42a5e2eed84711530c894bbabf209b222324dd9d93b618ab83edfeaba8b770"
+				}
+			]
+		},
+		{
+			"name": "Pretty YAML",
+			"author": "aukaost",
+			"homepage": "https://github.com/aukaost/SublimePrettyYAML",
+			"issues": "https://github.com/aukaost/SublimePrettyYAML/issues",
+			"releases": [
+				{
+					"sublime_text": ">=3000",
+					"version": "0.2.0",
+					"date": "2020-05-04 13:53:13",
+					"url": "./packages/Pretty_YAML-0.2.0.sublime-package",
+					"sha256": "7cffcb3ee829ab7e903571c05e45305e57611057f1463ada275fdf70294a5a8e"
+				}
+			]
+		},
+		{
+			"name": "Indent XML",
+			"author": "braver",
+			"homepage": "https://github.com/braver/IndentXML",
+			"issues": "https://github.com/braver/IndentXML/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "1.0.3",
+					"date": "2026-05-20 10:33:19",
+					"url": "./packages/Indent_XML-1.0.3.sublime-package",
+					"sha256": "d4b44c70582fce5ca5785d3d9285f8ddf0bb9d0bd27acbbf01dfd9211b34eca3"
+				}
+			]
+		},
+		{
+			"name": "SqlBeautifier",
+			"author": "zsong",
+			"homepage": "https://github.com/zsong/SqlBeautifier",
+			"issues": "https://github.com/zsong/SqlBeautifier/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "1.1.3",
+					"date": "2014-08-15 17:34:16",
+					"url": "./packages/SqlBeautifier-1.1.3.sublime-package",
+					"sha256": "dc9161d2aa389483a9090901b03b55dcb7847cd77c428890d127acd35be4297c"
+				}
+			]
+		},
+		{
+			"name": "Case Conversion",
+			"author": "jdavisclark",
+			"homepage": "https://github.com/jdavisclark/CaseConversion",
+			"issues": "https://github.com/jdavisclark/CaseConversion/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "2017.08.07.15.50.53",
+					"date": "2017-08-07 15:50:53",
+					"url": "./packages/Case_Conversion-master.sublime-package",
+					"sha256": "faa8c86369c0daf681fc0599d19ac1ecda3000f5879259532cf0345a1454214c"
+				}
+			]
+		},
+		{
+			"name": "StringUtilities",
+			"author": "Avtandil Kikabidze aka LONGMAN",
+			"homepage": "https://github.com/akalongman/sublimetext-stringutilities",
+			"issues": "https://github.com/akalongman/sublimetext-stringutilities/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "1.9.0",
+					"date": "2026-10-21 07:14:44",
+					"url": "./packages/StringUtilities-1.9.0.sublime-package",
+					"sha256": "a13f0c37d47ddd1126433f2abc2908b61effef1b1e370ecc01845389284a4d9d"
+				}
+			]
+		},
+		{
+			"name": "Text Pastry",
+			"author": "duydao",
+			"homepage": "https://github.com/duydao/Text-Pastry",
+			"issues": "https://github.com/duydao/Text-Pastry/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "1.6.2",
+					"date": "2022-12-04 19:57:20",
+					"url": "./packages/Text_Pastry-1.6.2.sublime-package",
+					"sha256": "3df5ca18482888b2011adedd4d705818386e3f322d300331c90d4195df9794ce"
+				}
+			]
+		},
+		{
+			"name": "Filter Lines",
+			"author": "davidpeckham",
+			"homepage": "https://github.com/davidpeckham/sublime-filterlines",
+			"issues": "https://github.com/davidpeckham/sublime-filterlines/issues",
+			"releases": [
+				{
+					"sublime_text": ">=3000",
+					"version": "3.1.4",
+					"date": "2019-08-09 09:34:04",
+					"url": "./packages/Filter_Lines-st3-3.1.4.sublime-package",
+					"sha256": "83e20e12019d734218eed6e3e7e7c5518ff593fd9b98763e52f39f4052f6fd1f"
+				}
+			]
+		},
+		{
+			"name": "Log Highlight",
+			"author": "poucotm",
+			"homepage": "https://github.com/poucotm/Log-Highlight",
+			"issues": "https://github.com/poucotm/Log-Highlight/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "2.2.5",
+					"date": "2026-09-27 11:05:00",
+					"url": "./packages/Log_Highlight-v2.2.5.sublime-package",
+					"sha256": "f3eb4efcae706d818abff62766bc21fc086570e448832f473d906df038f7a739"
+				}
+			]
+		},
+		{
+			"name": "Compare Side-By-Side",
+			"author": "kaste",
+			"homepage": "https://github.com/kaste/Compare-Side-By-Side",
+			"issues": "https://github.com/kaste/Compare-Side-By-Side/issues",
+			"releases": [
+				{
+					"sublime_text": ">=4000",
+					"version": "1.25.0",
+					"date": "2026-10-06 20:22:15",
+					"url": "./packages/Compare_Side-By-Side-v1.25.0.sublime-package",
+					"sha256": "ead5270ccca23af5dacfa52d48d489678e48e8337ba1d4e04b58a6629991d9bf"
+				}
+			]
+		},
+		{
+			"name": "Terraform",
+			"author": "SublimeText",
+			"homepage": "https://github.com/SublimeText/Terraform",
+			"issues": "https://github.com/SublimeText/Terraform/issues",
+			"releases": [
+				{
+					"sublime_text": "<4180",
+					"version": "1.3.1",
+					"date": "2024-02-03 08:21:09",
+					"url": "./packages/Terraform-2000-1.3.1.sublime-package",
+					"sha256": "ab63548740e7d375fe8202dff4789565994db6bb9a46b239946f2e2fda400afa"
+				},
+				{
+					"sublime_text": ">=4180",
+					"version": "2.0.3",
+					"date": "2026-06-15 22:51:16",
+					"url": "./packages/Terraform-4180-2.0.3.sublime-package",
+					"sha256": "061edec41c557631e77ea6aaaeb2cbef22a40ee77b43299da43c22731392aa4e"
+				}
+			]
+		},
+		{
+			"name": "Dockerfile Syntax Highlighting",
+			"author": "asbjornenge",
+			"homepage": "https://github.com/asbjornenge/Docker.tmbundle",
+			"issues": "https://github.com/asbjornenge/Docker.tmbundle/issues",
+			"releases": [
+				{
+					"sublime_text": "*",
+					"version": "1.6.5",
+					"date": "2024-06-24 02:12:14",
+					"url": "./packages/Dockerfile_Syntax_Highlighting-v1.6.5.sublime-package",
+					"sha256": "eaa1faf45e2660891b983c27853f3c765f52e230e9c84fb7c7630a612c129bc1"
+				}
+			]
+		},
+		{
+			"name": "MarkdownEditing",
+			"author": "SublimeText-Markdown",
+			"homepage": "https://sublimetext-markdown.github.io/MarkdownEditing",
+			"issues": "https://github.com/SublimeText-Markdown/MarkdownEditing/issues",
+			"releases": [
+				{
+					"sublime_text": "4107 - 4199",
+					"version": "3.6.4",
+					"date": "2026-10-10 17:03:08",
+					"url": "./packages/MarkdownEditing-4107-3.6.4.sublime-package",
+					"sha256": "1dfdbbf22fbc83794d72d83adb8c62dd86ef8edbce24b3cda3edd33899203574"
+				},
+				{
+					"sublime_text": ">=4200",
+					"version": "3.6.4",
+					"date": "2026-10-10 17:03:56",
+					"url": "./packages/MarkdownEditing-4200-3.6.4.sublime-package",
+					"sha256": "40fe0386f9fbd6cd1d2da5dbba0d996b8fa52af2ca66ec23df8d468309ceb2ed"
+				}
+			]
+		},
+		{
+			"name": "MarkdownPreview",
+			"author": "facelessuser",
+			"homepage": "https://github.com/facelessuser/MarkdownPreview",
+			"issues": "https://github.com/facelessuser/MarkdownPreview/issues",
+			"releases": [
+				{
+					"sublime_text": "3000 - 4200",
+					"version": "2.8.2",
+					"date": "2026-03-21 03:47:38",
+					"url": "./packages/MarkdownPreview-st3-2.8.2.sublime-package",
+					"sha256": "ded64b04cce91c24cf4c88401c07ab3980a33b6cd33f659d4b077a77d46e9345"
+				},
+				{
+					"sublime_text": ">=4201",
+					"version": "3.2.0",
+					"date": "2026-03-20 19:28:14",
+					"url": "./packages/MarkdownPreview-st4-3.2.0.sublime-package",
+					"sha256": "913f17573e9f7f56dc2fbe53e19aaae2db1f33e4709a8e9d206330228fb36964"
+				}
+			]
+		},
+		{
+			"name": "A File Icon",
+			"author": [
+				"ihodev",
+				"DeathAxe"
+			],
+			"homepage": "https://github.com/SublimeText/AFileIcon",
+			"issues": "https://github.com/SublimeText/AFileIcon/issues",
+			"releases": [
+				{
+					"sublime_text": "3114 - 4205",
+					"version": "3.33.9",
+					"date": "2026-10-04 13:14:00",
+					"url": "./packages/A_File_Icon-st3-3.33.9.sublime-package",
+					"sha256": "d8ad0bcbca3bd1a4883d250b948ba2c8dc1222a40a61048700ea8575d22c9e22"
+				},
+				{
+					"sublime_text": ">=4206",
+					"version": "4.0.1",
+					"date": "2026-10-11 15:41:27",
+					"url": "./packages/A_File_Icon-4.0.1.sublime-package",
+					"sha256": "eef9f5caebbdd8f861c59977954b7d248b7b7a79128c4187635c76a320cd96e0"
+				}
+			]
+		},
+		{
+			"name": "BracketHighlighter",
+			"author": "facelessuser",
+			"homepage": "https://github.com/facelessuser/BracketHighlighter",
+			"issues": "https://github.com/facelessuser/BracketHighlighter/issues",
+			"releases": [
+				{
+					"sublime_text": "3000 - 4200",
+					"version": "2.32.4",
+					"date": "2025-10-29 14:25:24",
+					"url": "./packages/BracketHighlighter-st3-2.32.4.sublime-package",
+					"sha256": "c09f117a24afb1b5601b5a122937723fa2932543da73c6d4c482467ef346fa04"
+				},
+				{
+					"sublime_text": ">=4201",
+					"version": "2.33.1",
+					"date": "2026-09-17 02:00:51",
+					"url": "./packages/BracketHighlighter-st4-2.33.1.sublime-package",
+					"sha256": "6c77bcce481baafa85e939af6f2694ee60ac959a18de2f72c31d76609f1c6a74"
+				}
+			]
+		}
+	],
+	"libraries": [
+		{
+			"name": "backrefs",
+			"description": "Backrefs regular expression wrapper.",
+			"author": "facelessuser",
+			"issues": "https://github.com/facelessuser/backrefs/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3"
+					],
+					"version": "1.10.0",
+					"url": "./libraries/backrefs-1.10.0.zip",
+					"sha256": "0cfde48891f608778a454443b2127fe655b376282f833b189356527ee8ad4cf7"
+				},
+				{
+					"python_versions": [
+						"3.8"
+					],
+					"version": "5.6",
+					"url": "./libraries/backrefs-5.6-py38-none-any.whl",
+					"sha256": "42e4be3fff89620b6a6d8ad90d60d717b6062ec749ad606e3c83a5462e979f2f"
+				},
+				{
+					"python_versions": [
+						"3.13"
+					],
+					"version": "8.1",
+					"url": "./libraries/backrefs-8.1-py313-none-any.whl",
+					"sha256": "db577dbae1c61187534d35fc9bfbd0c01158fff6239a66fecf7590e5b17879a9"
+				},
+				{
+					"python_versions": [
+						"3.14"
+					],
+					"version": "8.1",
+					"url": "./libraries/backrefs-8.1-py314-none-any.whl",
+					"sha256": "1e857c32e91b8fe46ddb359ac21021a37b090fa4239566a61e9856123e334041"
+				}
+			]
+		},
+		{
+			"name": "Markdown",
+			"description": "Python Markdown module",
+			"author": "waylan",
+			"issues": "https://github.com/Python-Markdown/markdown/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3"
+					],
+					"version": "3.2.2",
+					"url": "./libraries/Markdown-3.2.2.zip",
+					"sha256": "fcc65f0d96c8fde8b3d7c3f25185dfb15158f6b1fb834b699e65c170a7f7cb08"
+				},
+				{
+					"python_versions": [
+						"3.8"
+					],
+					"version": "3.2.2",
+					"url": "./libraries/Markdown-3.2.2-py3-none-any.whl",
+					"sha256": "c467cd6233885534bf0fe96e62e3cf46cfc1605112356c4f9981512b8174de59"
+				},
+				{
+					"python_versions": [
+						"3.13"
+					],
+					"version": "3.11.2",
+					"url": "./libraries/markdown-3.11.2-py3-none-any.whl",
+					"sha256": "f80390747a2a0ff2ba54da074ce4f862f72a6685f608cd2637b646a6d83993f5"
+				},
+				{
+					"python_versions": [
+						"3.14"
+					],
+					"version": "3.11.2",
+					"url": "./libraries/markdown-3.11.2-py3-none-any.whl",
+					"sha256": "f80390747a2a0ff2ba54da074ce4f862f72a6685f608cd2637b646a6d83993f5"
+				}
+			]
+		},
+		{
+			"name": "mdpopups",
+			"description": "Markdown Popups for Sublime",
+			"author": "facelessuser",
+			"issues": "https://github.com/facelessuser/sublime-markdown-popups/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3",
+						"3.8"
+					],
+					"version": "4.3.5",
+					"url": "./libraries/mdpopups-4.3.5-py3-none-any.whl",
+					"sha256": "a28858842f758f1b83f519c589ee0d5d859581be4acc98317ad56610793ca927"
+				},
+				{
+					"python_versions": [
+						"3.13",
+						"3.14"
+					],
+					"version": "5.1.2",
+					"url": "./libraries/mdpopups-5.1.2-py3-none-any.whl",
+					"sha256": "0ee53e9d24b1846f5b7f4b3a83e493e3aa28a825e26206617fa6e6b2abd6bd03"
+				}
+			]
+		},
+		{
+			"name": "pygments",
+			"description": "Python pygments module",
+			"author": "AndreasBackx",
+			"issues": "https://github.com/packagecontrol/pygments/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3"
+					],
+					"version": "2.1",
+					"url": "./libraries/Pygments-2.1-py3-none-any.whl",
+					"sha256": "148e04b185d3541b8d702e8cde3ee5acd06b31cc0d474127baba9f4652b2aaf1"
+				},
+				{
+					"python_versions": [
+						"3.8"
+					],
+					"version": "2.19.2",
+					"url": "./libraries/pygments-2.19.2-py3-none-any.whl",
+					"sha256": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b"
+				},
+				{
+					"python_versions": [
+						"3.13"
+					],
+					"version": "2.21.0",
+					"url": "./libraries/pygments-2.21.0-py3-none-any.whl",
+					"sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+				},
+				{
+					"python_versions": [
+						"3.14"
+					],
+					"version": "2.21.0",
+					"url": "./libraries/pygments-2.21.0-py3-none-any.whl",
+					"sha256": "2363c69b61c4a97c838da3b130dcd6468f4848992b21a82f2a63ec34377137d9"
+				}
+			]
+		},
+		{
+			"name": "pymdown-extensions",
+			"description": "PyMdown Extensions for Python Markdown",
+			"author": "facelessuser",
+			"issues": "https://github.com/facelessuser/pymdown-extensions/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3",
+						"3.8"
+					],
+					"version": "8.1.1",
+					"url": "./libraries/pymdown-extensions-st3-8.1.1.zip",
+					"sha256": "4c99af448fa587b99b789075f395c36b99d3f599b818aa0264dba47b569978c9"
+				},
+				{
+					"python_versions": [
+						"3.13"
+					],
+					"version": "12.3",
+					"url": "./libraries/pymdown_extensions-12.3-py3-none-any.whl",
+					"sha256": "345493a8e3497e24382902903a1c43a28e34a52f2b7571a1c9641429b820ca74"
+				},
+				{
+					"python_versions": [
+						"3.14"
+					],
+					"version": "12.3",
+					"url": "./libraries/pymdown_extensions-12.3-py3-none-any.whl",
+					"sha256": "345493a8e3497e24382902903a1c43a28e34a52f2b7571a1c9641429b820ca74"
+				}
+			]
+		},
+		{
+			"name": "pyyaml",
+			"description": "Python PyYAML module",
+			"author": "FichteFoll",
+			"issues": "https://github.com/packagecontrol/pyyaml/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3",
+						"3.8"
+					],
+					"version": "5.1.1",
+					"url": "./libraries/pyyaml-v5.1.1.zip",
+					"sha256": "7e02094e016f6b40048caa45014bef6ed982c25d6b0861b03213436909851168"
+				},
+				{
+					"python_versions": [
+						"3.13"
+					],
+					"version": "6.0.3",
+					"url": "./libraries/pyyaml-6.0.3-cp313-cp313-macosx_11_0_arm64.whl",
+					"sha256": "2283a07e2c21a2aa78d9c4442724ec1eb15f5e42a723b99cb3d822d48f5f7ad1",
+					"platforms": [
+						"osx-arm64"
+					]
+				},
+				{
+					"python_versions": [
+						"3.14"
+					],
+					"version": "6.0.3",
+					"url": "./libraries/pyyaml-6.0.3-cp314-cp314-macosx_11_0_arm64.whl",
+					"sha256": "34d5fcd24b8445fadc33f9cf348c1047101756fd760b4dacb5c3e99755703310",
+					"platforms": [
+						"osx-arm64"
+					]
+				},
+				{
+					"python_versions": [
+						"3.13"
+					],
+					"version": "6.0.3",
+					"url": "./libraries/pyyaml-6.0.3-cp313-cp313-macosx_10_13_x86_64.whl",
+					"sha256": "8da9669d359f02c0b91ccc01cac4a67f16afec0dac22c2ad09f46bee0697eba8",
+					"platforms": [
+						"osx-x64"
+					]
+				},
+				{
+					"python_versions": [
+						"3.14"
+					],
+					"version": "6.0.3",
+					"url": "./libraries/pyyaml-6.0.3-cp314-cp314-macosx_10_13_x86_64.whl",
+					"sha256": "8d1fab6bb153a416f9aeb4b8763bc0f22a5586065f86f7664fc23339fc1c1fac",
+					"platforms": [
+						"osx-x64"
+					]
+				}
+			]
+		},
+		{
+			"name": "typing",
+			"description": "Python typing module",
+			"author": "FichteFoll",
+			"issues": "https://github.com/packagecontrol/typing/issues",
+			"releases": [
+				{
+					"python_versions": [
+						"3.3"
+					],
+					"version": "3.7.4",
+					"url": "./libraries/typing-v3.7.4.zip",
+					"sha256": "102ed578e262945088e2ca4815223b801e24f398b186041dd46ea68475c04671"
+				}
+			]
+		}
+	]
+}

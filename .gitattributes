@@ -1,0 +1,3 @@
+*.sublime-package binary
+*.whl binary
+*.zip binary
