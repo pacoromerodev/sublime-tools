@@ -107,7 +107,7 @@ Encima del editor aparece una barra doble, al estilo de la cinta de Office: arri
 
 - **Mostrar u ocultar:** menú **Ver → Barra de herramientas**, o paleta → **Barra de herramientas: mostrar u ocultar**. Se recuerda por ventana.
 - **Altura:** arrastra el borde entre la barra y el editor, o cambia `"altura"` en los ajustes de la barra.
-- **Personalizar:** botón **Editar esta barra** (pestaña Ver). Cada botón es un texto y un comando de Sublime; los cambios se ven al guardar.
+- **Personalizar:** botón **Editar esta barra** (pestaña Ver). Cada botón es un texto, un emoji (`"icono"`) y un comando de Sublime; los cambios se ven al guardar. Para quitar los emojis, pon `"mostrar_iconos": false`.
 
 Sublime Text no deja añadir barras propias a la ventana, así que la barra es una pestaña especial (**Herramientas**) en una fila fina arriba. Por eso tiene su propia pestaña encima y, si cambias la distribución de columnas (Ver → Distribución), hay que ocultarla y volver a mostrarla. Si algún archivo se abre en esa fila, se mueve solo al editor.
 

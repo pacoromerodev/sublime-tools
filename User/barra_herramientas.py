@@ -144,6 +144,15 @@ body {
 """
 
 
+def etiqueta(elemento, clave):
+    """Texto del botón o pestaña, con su emoji delante si está activado."""
+    texto = elemento.get(clave, "?")
+    icono = elemento.get("icono")
+    if icono and ajustes().get("mostrar_iconos", True):
+        texto = icono + "\u00a0" + texto
+    return html.escape(texto)
+
+
 def href(**args):
     # Comillas simples en el atributo y JSON (comillas dobles) dentro, sin escapar:
     # los argumentos son solo números y palabras fijas
@@ -161,7 +170,7 @@ def generar_html(window):
         clase = "pestana activa" if i == activa else "pestana"
         partes.append("<a class='{}' href='{}'>{}</a> ".format(
             clase, href(accion="pestana", indice=i),
-            html.escape(p.get("nombre", "?"))))
+            etiqueta(p, "nombre")))
     partes.append("</div><div class='herramientas'>")
 
     if lista:
@@ -173,7 +182,7 @@ def generar_html(window):
             partes.append("<a class='boton' href='{}' title='{}'>{}</a> ".format(
                 href(accion="ejecutar", pestana=activa, indice=j),
                 html.escape(titulo, quote=True),
-                html.escape(h.get("texto", "?"))))
+                etiqueta(h, "texto")))
     partes.append("</div></body>")
     return "".join(partes)
 
