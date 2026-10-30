@@ -15,6 +15,9 @@
 		"StringUtilities",
 		"Text Pastry",
 
+		// CSV y TSV: colores por columna, alinear, consultas tipo SQL
+		"rainbow_csv",
+
 		// Logs y comparación
 		"Filter Lines",
 		"Log Highlight",

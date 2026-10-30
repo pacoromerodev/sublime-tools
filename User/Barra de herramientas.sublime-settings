@@ -138,7 +138,23 @@
 			],
 		},
 		{
-			"nombre": "Logs y comparar", "icono": "📊",
+			"nombre": "CSV", "icono": "📊",
+			"herramientas":
+			[
+				{ "texto": "Alinear columnas", "icono": "📏", "comando": "align", "descripcion": "Alinea las columnas con espacios para leerlas como una tabla" },
+				{ "texto": "Quitar alineado", "icono": "🗜️", "comando": "shrink", "descripcion": "Quita los espacios que añade Alinear" },
+				{ "texto": "Validar", "icono": "✅", "comando": "csv_lint", "descripcion": "Busca filas con un número distinto de columnas o comillas mal cerradas" },
+				{ "texto": "Consulta SQL", "icono": "🧮", "comando": "run_query", "descripcion": "Filtra, ordena o agrupa con SELECT … WHERE … ORDER BY (RBQL). Columnas: a1, a2… (F5)" },
+				"-",
+				{ "texto": "Cambiar separador", "icono": "🔀", "comando": "csv_cambiar_separador", "descripcion": "Coma, punto y coma, tabulador o barra, respetando las comillas" },
+				{ "texto": "CSV → JSON", "icono": "🧾", "comando": "csv_a_json", "descripcion": "Abre el CSV como JSON en una pestaña nueva (la primera fila son los nombres)" },
+				"-",
+				{ "texto": "Detectar como CSV", "icono": "🌈", "comando": "enable_auto", "descripcion": "Selecciona el separador en el texto y pulsa aquí para colorear las columnas" },
+				{ "texto": "Quitar colores", "icono": "⬜", "comando": "disable" },
+			],
+		},
+		{
+			"nombre": "Logs y comparar", "icono": "📈",
 			"herramientas":
 			[
 				{ "texto": "Dejar líneas con texto", "icono": "✅", "comando": "prompt_filter_to_lines", "args": { "search_type": "string", "invert_search": false } },

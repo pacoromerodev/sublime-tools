@@ -107,6 +107,21 @@
 			]
 		},
 		{
+			"name": "rainbow_csv",
+			"author": "mechatroner",
+			"homepage": "https://github.com/mechatroner/sublime_rainbow_csv",
+			"issues": "https://github.com/mechatroner/sublime_rainbow_csv/issues",
+			"releases": [
+				{
+					"sublime_text": ">=3000",
+					"version": "2.10.1",
+					"date": "2026-09-26 01:26:29",
+					"url": "./packages/rainbow_csv-2.10.1.sublime-package",
+					"sha256": "69ebacbd28983028ee6338af00f2d2e5912f4d835883a9aa2aa299268b0351cb"
+				}
+			]
+		},
+		{
 			"name": "Filter Lines",
 			"author": "davidpeckham",
 			"homepage": "https://github.com/davidpeckham/sublime-filterlines",

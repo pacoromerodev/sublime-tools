@@ -14,6 +14,7 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 | `User/Package Control.sublime-settings` | Instala automáticamente los paquetes de la tabla de abajo. Si ya tenías otros, se añaden a tu lista sin quitar ninguno |
 | `User/JSON.sublime-settings`, `User/YAML.sublime-settings` | Sangría de 2 espacios en JSON y YAML (el resto de lenguajes no cambia) |
 | `User/Default.sublime-commands` | Añade a la paleta el comando para formatear SQL y los de la barra de herramientas |
+| `User/csv_herramientas.py` | Cambiar el separador de un CSV y convertirlo a JSON |
 | `User/barra_herramientas.py`, `User/Barra de herramientas.sublime-settings`, `User/Main.sublime-menu` | Barra de herramientas con pestañas encima del editor (ver más abajo) |
 | `User/Pretty JSON.sublime-settings` | Pretty JSON formatea con 2 espacios, sin reordenar las claves y sin escapar tildes |
 | `install.sh` | Lo instala todo y, además, configura el comando `subl` para la Terminal |
@@ -78,6 +79,7 @@ Devuelve los menús al inglés y recupera los ajustes que tenías antes de insta
 | **Case Conversion** | snake_case, camelCase, PascalCase, CONSTANT_CASE, kebab-case… |
 | **StringUtilities** | Base64, codificar/decodificar URL, hashes, escapar JSON (por ejemplo, para leer el payload de un JWT) |
 | **Text Pastry** | Insertar números o secuencias en varias líneas a la vez (datos de prueba, IDs) |
+| **Rainbow CSV** | CSV y TSV: cada columna de un color, el nombre de la columna al pasar el ratón, alinear como tabla, validar y consultas tipo SQL (RBQL) |
 | **Filter Lines** | Dejar solo las líneas que contienen un texto o una regex, o quitarlas. Ideal para logs |
 | **Log Highlight** | Colorear logs por nivel (ERROR, WARN, INFO) |
 | **Compare Side-By-Side** | Comparar dos pestañas lado a lado |
@@ -102,6 +104,7 @@ Encima del editor aparece una barra doble, al estilo de la cinta de Office: arri
 | **Texto** | MAYÚSCULAS, minúsculas, Título, iNVERTIR · snake_case, camelCase, PascalCase, CONSTANT_CASE, kebab-case, dot.case, separar palabras · Numerar, UUID, Fecha y hora |
 | **Formato** | JSON (formatear, minificar, ordenar claves, validar) · YAML, XML, SQL · Reindentar |
 | **Codificar** | Base64, URL, Hex y entidades HTML (codificar y decodificar) · Unix ↔ fecha · MD5, SHA1, SHA256 |
+| **CSV** | Alinear columnas, Quitar alineado, Validar, Consulta SQL · Cambiar separador, CSV → JSON · Detectar como CSV, Quitar colores |
 | **Logs y comparar** | Dejar o quitar líneas con un texto o regex · Comparar con otra pestaña, con el portapapeles o entre selecciones |
 | **Ver** | Barra lateral, Minimapa, Ajuste de línea, Pantalla completa, Sin distracciones · Markdown en navegador · Consola, Editar esta barra |
 
@@ -146,6 +149,9 @@ En los MacBook, F3 puede ser una tecla multimedia: púlsala junto con **fn**, o 
 | snake_case, camelCase, PascalCase… | Paleta → **Convert Case** y eliges el formato |
 | Cambiar saltos de línea (LF / CRLF) | Ver → Finales de línea |
 | Reemplazar `..` por un salto de línea | Ctrl+H, activa el botón **.\*** (regex), busca `\.\.` y reemplaza por `\n` |
+| Ver un CSV como tabla | Se colorea solo al abrir `.csv` o `.tsv`. Barra → **CSV → Alinear columnas** (y **Quitar alineado** antes de guardar) |
+| Filtrar u ordenar un CSV | Barra → **CSV → Consulta SQL** (o F5): por ejemplo `SELECT * WHERE a3 > 100 ORDER BY a1`. Las columnas son `a1`, `a2`… |
+| Pasar un CSV de Excel (`;`) a comas | Barra → **CSV → Cambiar separador** → Coma. Respeta los campos entre comillas |
 | Filtrar un log por texto | Paleta → **Filter Lines: Include Lines With String** (o *With Regex*). Para quitar líneas: **Filter Lines: Exclude Lines With String** |
 | Comparar dos ficheros | Clic derecho en la pestaña de uno → **Compare with active tab** (compara con el que tienes abierto) |
 | Decodificar Base64 o URL | Selecciona el texto → paleta → **String Utilities: Convert From Base64** (o *Decode from URL Notation*) |

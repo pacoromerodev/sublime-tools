@@ -3,6 +3,10 @@
 	// SqlBeautifier no trae entrada en la paleta; esta la añade
 	{ "caption": "SQL: Format SQL Statement", "command": "sql_beautifier" },
 
+	// Utilidades de CSV (csv_herramientas.py)
+	{ "caption": "CSV: Cambiar separador", "command": "csv_cambiar_separador" },
+	{ "caption": "CSV: Convertir a JSON", "command": "csv_a_json" },
+
 	// Barra de herramientas con pestañas (barra_herramientas.py)
 	{ "caption": "Barra de herramientas: mostrar u ocultar", "command": "barra_herramientas", "args": { "accion": "alternar" } },
 	{ "caption": "Barra de herramientas: editar pestañas y botones", "command": "open_file", "args": { "file": "${packages}/User/Barra de herramientas.sublime-settings" } },
