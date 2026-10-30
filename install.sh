@@ -20,7 +20,7 @@ info()  { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 ok()    { printf '\033[1;32m ✓\033[0m %s\n' "$*"; }
 aviso() { printf '\033[1;33m !\033[0m %s\n' "$*"; }
 
-if pgrep -xq "Sublime Text" 2>/dev/null; then
+if pgrep -x sublime_text >/dev/null 2>&1; then
     aviso "Sublime Text está abierto. Ciérralo (⌘Q) antes de continuar."
     exit 1
 fi
