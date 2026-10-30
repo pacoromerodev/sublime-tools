@@ -165,6 +165,14 @@ Algunas opciones las pone macOS y siempre salen en inglés: *Services*, *Hide*, 
 2. Escribe `Package Control: List Packages` e Intro.
 - [ ] Aparecen, entre otros, Pretty JSON, Pretty YAML, Case Conversion, Filter Lines y Compare Side-By-Side.
 
+### Barra de herramientas
+
+Arriba del editor verás una barra con pestañas (**Inicio**, **Buscar**, **Líneas**, **Texto**, **Formato**, **Codificar**, **Logs y comparar**, **Ver**) y, debajo, los botones de cada una. Abre un archivo, pulsa **Texto → MAYÚSCULAS** con algo seleccionado y comprueba que cambia.
+
+Si no aparece: menú **Ver → Barra de herramientas**.
+
+- [ ] La barra se ve y los botones actúan sobre el archivo abierto.
+
 ### Atajos al estilo Notepad++
 Abre un archivo nuevo (Ctrl+N), escribe unas líneas y prueba:
 - [ ] **Ctrl+H** abre Reemplazar (si oculta Sublime, usa **Ctrl+R**; ver Problemas frecuentes).

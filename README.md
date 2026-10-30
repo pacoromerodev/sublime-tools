@@ -13,7 +13,8 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 | `User/Default (OSX).sublime-keymap` | Atajos de teclado al estilo Notepad++ (ver tabla más abajo) |
 | `User/Package Control.sublime-settings` | Instala automáticamente los paquetes de la tabla de abajo. Si ya tenías otros, se añaden a tu lista sin quitar ninguno |
 | `User/JSON.sublime-settings`, `User/YAML.sublime-settings` | Sangría de 2 espacios en JSON y YAML (el resto de lenguajes no cambia) |
-| `User/Default.sublime-commands` | Añade a la paleta el comando para formatear SQL |
+| `User/Default.sublime-commands` | Añade a la paleta el comando para formatear SQL y los de la barra de herramientas |
+| `User/barra_herramientas.py`, `User/Barra de herramientas.sublime-settings`, `User/Main.sublime-menu` | Barra de herramientas con pestañas encima del editor (ver más abajo) |
 | `User/Pretty JSON.sublime-settings` | Pretty JSON formatea con 2 espacios, sin reordenar las claves y sin escapar tildes |
 | `install.sh` | Lo instala todo y, además, configura el comando `subl` para la Terminal |
 | `offline/` | Package Control, los paquetes y sus librerías ya descargados, para instalar sin internet |
@@ -88,6 +89,27 @@ Devuelve los menús al inglés y recupera los ajustes que tenías antes de insta
 | **BracketHighlighter** | Resaltar llaves y corchetes emparejados |
 
 No se incluyen GitGutter (Sublime Text 4 ya marca en el margen las líneas cambiadas en git) ni autocompletado de lenguajes o asistentes de IA, para no duplicar lo que hace el IDE.
+
+## Barra de herramientas
+
+Encima del editor aparece una barra doble, al estilo de la cinta de Office: arriba las pestañas y debajo los botones de la pestaña elegida. Los botones se aplican al archivo en el que estabas.
+
+| Pestaña | Botones |
+|---|---|
+| **Inicio** | Nuevo, Abrir, Guardar, Guardar todo, Cerrar · Deshacer, Rehacer · Cortar, Copiar, Pegar, Seleccionar todo · Paleta de comandos |
+| **Buscar** | Buscar, Reemplazar, Buscar en archivos, Siguiente, Anterior, Seleccionar coincidencias · Ir a línea, archivo o símbolo, Llave pareja |
+| **Líneas** | Duplicar, Eliminar, Subir, Bajar, Unir, Comentar · Ordenar, Invertir orden, Quitar duplicadas · Saltos LF/CRLF, Tabs ↔ espacios |
+| **Texto** | MAYÚSCULAS, minúsculas, Título, iNVERTIR · snake_case, camelCase, PascalCase, CONSTANT_CASE, kebab-case, dot.case, separar palabras · Numerar, UUID, Fecha y hora |
+| **Formato** | JSON (formatear, minificar, ordenar claves, validar) · YAML, XML, SQL · Reindentar |
+| **Codificar** | Base64, URL, Hex y entidades HTML (codificar y decodificar) · Unix ↔ fecha · MD5, SHA1, SHA256 |
+| **Logs y comparar** | Dejar o quitar líneas con un texto o regex · Comparar con otra pestaña, con el portapapeles o entre selecciones |
+| **Ver** | Barra lateral, Minimapa, Ajuste de línea, Pantalla completa, Sin distracciones · Markdown en navegador · Consola, Editar esta barra |
+
+- **Mostrar u ocultar:** menú **Ver → Barra de herramientas**, o paleta → **Barra de herramientas: mostrar u ocultar**. Se recuerda por ventana.
+- **Altura:** arrastra el borde entre la barra y el editor, o cambia `"altura"` en los ajustes de la barra.
+- **Personalizar:** botón **Editar esta barra** (pestaña Ver). Cada botón es un texto y un comando de Sublime; los cambios se ven al guardar.
+
+Sublime Text no deja añadir barras propias a la ventana, así que la barra es una pestaña especial (**Herramientas**) en una fila fina arriba. Por eso tiene su propia pestaña encima y, si cambias la distribución de columnas (Ver → Distribución), hay que ocultarla y volver a mostrarla. Si algún archivo se abre en esa fila, se mueve solo al editor.
 
 ## Atajos al estilo Notepad++
 

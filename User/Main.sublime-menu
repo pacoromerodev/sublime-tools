@@ -1,0 +1,11 @@
+// Añade al menú Ver la opción para mostrar u ocultar la barra de herramientas
+[
+	{
+		"id": "view",
+		"children":
+		[
+			{ "caption": "-" },
+			{ "caption": "Barra de herramientas", "command": "barra_herramientas", "args": { "accion": "alternar" }, "checkbox": true },
+		],
+	},
+]
