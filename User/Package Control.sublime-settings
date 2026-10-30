@@ -1,0 +1,9 @@
+// Paquetes que Package Control instala automáticamente al abrir Sublime Text
+{
+	"installed_packages":
+	[
+		"Package Control",
+		"Pretty JSON",
+		"Case Conversion",
+	],
+}
