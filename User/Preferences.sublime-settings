@@ -1,0 +1,25 @@
+// Ajustes de Sublime Text para trabajar como en Notepad++
+{
+	// Recordar archivos abiertos y cambios sin guardar al cerrar (como las pestañas de Notepad++)
+	"hot_exit": "always",
+	"remember_open_files": true,
+
+	// Mostrar espacios, tabulaciones y saltos de línea
+	"draw_white_space": ["all"],
+	"show_line_endings": true,
+	"show_encoding": true,
+
+	// Saltos de línea por defecto en formato Unix (LF)
+	"default_line_ending": "unix",
+
+	// Resaltar la línea actual y no ajustar líneas largas
+	"highlight_line": true,
+	"word_wrap": false,
+
+	// No modificar el archivo al guardar
+	"trim_trailing_white_space_on_save": "none",
+	"ensure_newline_at_eof_on_save": false,
+
+	// Barra lateral solo con el árbol de carpetas (sin la lista "Open Files")
+	"show_open_files": false,
+}

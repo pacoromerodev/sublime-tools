@@ -1,0 +1,35 @@
+// Paquetes que Package Control instala automáticamente al abrir Sublime Text
+{
+	"installed_packages":
+	[
+		"Package Control",
+
+		// JSON, YAML, XML y SQL
+		"Pretty JSON",
+		"Pretty YAML",
+		"Indent XML",
+		"SqlBeautifier",
+
+		// Texto: mayúsculas, snake_case, Base64, URL, secuencias
+		"Case Conversion",
+		"StringUtilities",
+		"Text Pastry",
+
+		// Logs y comparación
+		"Filter Lines",
+		"Log Highlight",
+		"Compare Side-By-Side",
+
+		// Infraestructura
+		"Terraform",
+		"Dockerfile Syntax Highlighting",
+
+		// Markdown (ADRs, README, notas)
+		"MarkdownEditing",
+		"MarkdownPreview",
+
+		// Comodidad
+		"A File Icon",
+		"BracketHighlighter",
+	],
+}

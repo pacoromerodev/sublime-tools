@@ -1,0 +1,42 @@
+// Atajos de teclado al estilo Notepad++ para macOS.
+//
+// "super" es la tecla ⌘. Con Control y Comando intercambiados en
+// Ajustes del Sistema → Teclado → Teclas modificadoras, "super" se pulsa
+// físicamente con la tecla Ctrl, igual que en Windows.
+//
+// Ya funcionan sin tocar nada (atajos de serie de Sublime):
+//   Ctrl+A  Seleccionar todo         Ctrl+F  Buscar
+//   Ctrl+C/X/V  Copiar/Cortar/Pegar  Ctrl+Z  Deshacer
+//   Ctrl+S  Guardar                  Ctrl+W  Cerrar pestaña
+//   Ctrl+J  Unir líneas              Ctrl+/  Comentar/descomentar
+//   Ctrl+Shift+F  Buscar en archivos
+[
+	// --- Buscar y reemplazar ---
+	// Ctrl+H: Reemplazar (Notepad++)
+	{ "keys": ["super+h"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+	// Ctrl+R: Reemplazar (alternativa, por si macOS reserva Ctrl+H para "Ocultar")
+	{ "keys": ["super+r"], "command": "show_panel", "args": {"panel": "replace", "reverse": false} },
+	// F3 / Shift+F3: siguiente / anterior coincidencia
+	{ "keys": ["f3"], "command": "find_next" },
+	{ "keys": ["shift+f3"], "command": "find_prev" },
+
+	// --- Navegación ---
+	// Ctrl+G: Ir a la línea
+	{ "keys": ["super+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+	// Ctrl+B: Ir a la llave/corchete correspondiente
+	{ "keys": ["super+b"], "command": "move_to", "args": {"to": "brackets"} },
+
+	// --- Líneas ---
+	// Ctrl+D: Duplicar línea
+	{ "keys": ["super+d"], "command": "duplicate_line" },
+	// Ctrl+L: Eliminar línea
+	{ "keys": ["super+l"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+	// Ctrl+Shift+↑ / ↓: Mover la línea arriba / abajo
+	{ "keys": ["super+shift+up"], "command": "swap_line_up" },
+	{ "keys": ["super+shift+down"], "command": "swap_line_down" },
+
+	// --- Mayúsculas / minúsculas ---
+	// Ctrl+U: minúsculas · Ctrl+Shift+U: MAYÚSCULAS
+	{ "keys": ["super+u"], "command": "lower_case" },
+	{ "keys": ["super+shift+u"], "command": "upper_case" },
+]

@@ -1,0 +1,6 @@
+// Pretty JSON: sangría de 2 espacios y sin reordenar las claves
+{
+	"indent": 2,
+	"sort_keys": false,
+	"ensure_ascii": false,
+}
