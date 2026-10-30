@@ -8,7 +8,7 @@ No necesita permisos de administrador, así que funciona también en equipos ges
 
 | Archivo | Qué hace |
 |---|---|
-| `traducir_sublime.py` | Traduce al español los menús (Archivo, Editar, Selección, Buscar, Ver, Ir, Herramientas, Proyecto, Preferencias, Ayuda y la barra lateral) |
+| `traducir_sublime.py` | Traduce al español todos los menús: la barra de menús, los menús de clic derecho (texto, pestañas, barra lateral, imágenes), las codificaciones y los finales de línea. Revisado con los menús reales de Sublime Text 4 (builds 4192 a 4215) |
 | `User/Preferences.sublime-settings` | Ajustes al estilo Notepad++: recuerda los archivos abiertos, muestra espacios y saltos de línea, usa LF por defecto y deja la barra lateral solo con el árbol de carpetas |
 | `User/Default (OSX).sublime-keymap` | Atajos de teclado al estilo Notepad++ (ver tabla más abajo) |
 | `User/Package Control.sublime-settings` | Instala automáticamente los paquetes de la tabla de abajo. Si ya tenías otros, se añaden a tu lista sin quitar ninguno |
@@ -120,5 +120,8 @@ En los MacBook, F3 puede ser una tecla multimedia: púlsala junto con **fn**, o 
 ## Limitaciones
 
 - Solo se traducen los menús. El panel de buscar, la paleta de comandos y los mensajes internos están dentro de la propia aplicación y no se pueden traducir.
+- En macOS, algunas opciones las añade el propio sistema y siguen en inglés: en el menú **Sublime Text**, *Services*, *Hide Sublime Text*, *Hide Others*, *Show All* y *Quit Sublime Text*; el menú **Window** (*Minimize*, *Zoom*…); y en **Editar**, *Start Dictation* y *Emoji & Symbols*.
+- Las opciones que cambian de nombre según el estado (por ejemplo *Show Side Bar* / *Hide Side Bar*) quedan con un texto fijo: **Mostrar/ocultar barra lateral**. *Deshacer* y *Rehacer* ya no indican qué acción deshacen.
+- Las listas que Sublime rellena sola (archivos recientes, sintaxis, macros, sistemas de compilación, diccionarios) muestran los nombres tal cual.
 - Si algún menú queda en inglés, el script lo indica al terminar. Basta con añadir el texto al diccionario `T` de `traducir_sublime.py`.
 - En macOS, ⌘H (físicamente Ctrl+H) es el atajo del sistema para ocultar la aplicación. Si en tu equipo **Ctrl+H** oculta Sublime en lugar de abrir Reemplazar, usa **Ctrl+R**, que hace lo mismo.

@@ -5,6 +5,9 @@ Traduce al español los menús de Sublime Text 4 (macOS).
 Cómo funciona:
 - Lee los menús originales del paquete interno "Default.sublime-package".
 - Sustituye solo los textos visibles ("caption"); no toca comandos ni atajos.
+- A las opciones que no traen texto (Copiar, Pegar, Deshacer, Mostrar barra
+  lateral…) les añade uno en español, porque si no Sublime las muestra en inglés.
+- Diccionario revisado con los menús reales de Sublime Text 4 (builds 4192 a 4215).
 - Guarda las copias traducidas en tu carpeta de usuario de Sublime Text
   (Packages/Default), que Sublime usa por encima de las originales.
 - No necesita permisos de administrador.
@@ -18,6 +21,7 @@ menús recojan las opciones nuevas.
 """
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -164,7 +168,7 @@ T = {
     "Enter Full Screen": "Pantalla completa", "Exit Full Screen": "Salir de pantalla completa",
     "Enter Distraction Free Mode": "Modo sin distracciones",
     "Exit Distraction Free Mode": "Salir del modo sin distracciones",
-    "Layout": "Distribución", "Single": "Una sola",
+    "Layout": "Distribución", "Single": "Única",
     "Groups": "Grupos", "Focus Group": "Activar grupo", "Move File To Group": "Mover archivo al grupo",
     "New Group": "Nuevo grupo", "Close Group": "Cerrar grupo",
     "Next": "Siguiente", "Previous": "Anterior",
@@ -182,7 +186,7 @@ T = {
     "Dictionary": "Diccionario",
 
     # Ir
-    "Goto Anything": "Ir a cualquier cosa", "Goto Symbol": "Ir a símbolo",
+    "Goto Anything": "Ir a cualquier elemento", "Goto Symbol": "Ir a símbolo",
     "Goto Symbol in Project": "Ir a símbolo en el proyecto",
     "Goto Definition": "Ir a la definición", "Goto Reference": "Ir a referencia",
     "Goto Line": "Ir a la línea",
@@ -258,6 +262,116 @@ T = {
 
     # Ventana
     "Minimize": "Minimizar", "Zoom": "Zoom", "Bring All to Front": "Traer todo al frente",
+
+    # Añadidos tras revisar los menús reales de Sublime Text 4 (builds 4192-4215)
+    "Print": "Imprimir", "Remove Deleted": "Quitar elementos eliminados",
+    "Reopen File as Image": "Reabrir archivo como imagen",
+    "Reopen File as Text": "Reabrir archivo como texto",
+    "Set Encoding": "Establecer codificación",
+    "Expand Selection to Block": "Expandir selección al bloque",
+    "Expand Selection to Line Upward": "Expandir selección a la línea hacia arriba",
+    "Wrap Paragraph": "Ajustar párrafo",
+    "Sort": "Ordenar", "Sort (Case Sensitive)": "Ordenar (distinguir mayúsculas)",
+    "Cancel Find in Files": "Cancelar búsqueda en archivos",
+    "Move File to Group": "Mover archivo al grupo",
+    "Move File to New Group": "Mover archivo a un grupo nuevo",
+    "Split View": "Dividir vista",
+    "Tab Selection": "Selección de pestañas",
+    "Select to Left": "Seleccionar hacia la izquierda",
+    "Select to Right": "Seleccionar hacia la derecha",
+    "Unselect Current": "Deseleccionar la actual",
+    "Unselect Others": "Deseleccionar las demás",
+    "Unselect to Left": "Deseleccionar hacia la izquierda",
+    "Unselect to Right": "Deseleccionar hacia la derecha",
+    "Focus to Left": "Activar la de la izquierda",
+    "Focus to Right": "Activar la de la derecha",
+    "Close Selected Tabs": "Cerrar pestañas seleccionadas",
+    "Close Unselected Tabs": "Cerrar pestañas no seleccionadas",
+    "Close Tabs Below": "Cerrar pestañas de abajo",
+    "Close Unmodified Tabs Below": "Cerrar pestañas sin cambios de abajo",
+    "Close Tabs With Deleted Files": "Cerrar pestañas de archivos eliminados",
+    "Choose": "Elegir", "Reset Size": "Restablecer tamaño",
+    "Enable Package Control": "Activar Package Control",
+    "View Package File": "Ver archivo de un paquete",
+    "Licenses and Attribution": "Licencias y atribuciones",
+    "Report a Bug": "Informar de un error",
+    "Open Terminal Here": "Abrir terminal aquí",
+    "Open in Browser": "Abrir en el navegador",
+    "Line History": "Historial de la línea",
+    "Revert Diff Hunk": "Revertir bloque de cambios",
+    "Reveal Link Source": "Mostrar origen del enlace",
+
+    # Buscar en archivos (menú del botón "…" junto a "Where")
+    "Clear": "Limpiar", "Add Folder": "Añadir carpeta",
+    "Add Open Folders": "Añadir carpetas abiertas", "Add Open Files": "Añadir archivos abiertos",
+    "Add Current File": "Añadir archivo actual",
+    "Add Include Filter": "Añadir filtro de inclusión",
+    "Add Exclude Filter": "Añadir filtro de exclusión",
+    "Add Project Filters": "Añadir filtros del proyecto",
+
+    # Finales de línea
+    "Windows Line Endings (CRLF)": "Finales de línea Windows (CRLF)",
+    "Unix Line Endings (LF)": "Finales de línea Unix (LF)",
+    "Mac OS 9 Line Endings (CR)": "Finales de línea Mac OS 9 (CR)",
+}
+
+# Textos que se dejan igual a propósito (nombres propios, formatos, números)
+NO_TRADUCIR = {
+    "Windows", "Unix", "Mac OS 9", "Twitter", "Hexadecimal", "DOS (CP 437)",
+    "UTF-8", "UTF-16 LE", "UTF-16 BE",
+    "snake_case", "kebab-case", "lowerCamelCase", "UpperCamelCase",
+}
+
+# Regiones de las codificaciones: "Western (Windows 1252)" -> "Occidental (Windows 1252)"
+REGIONES = {
+    "Western": "Occidental", "Central European": "Centroeuropeo", "Cyrillic": "Cirílico",
+    "Greek": "Griego", "Turkish": "Turco", "Hebrew": "Hebreo", "Arabic": "Árabe",
+    "Baltic": "Báltico", "Vietnamese": "Vietnamita", "Nordic": "Nórdico",
+    "Celtic": "Celta", "Romanian": "Rumano", "Estonian": "Estonio", "Chinese": "Chino",
+    "Japanese": "Japonés", "Korean": "Coreano", "Thai": "Tailandés",
+}
+
+# Opciones que en el menú original no tienen texto: Sublime les pone el nombre
+# del comando en inglés. Aquí se les da un texto fijo en español.
+# Clave: comando, o (comando, argumento, valor) cuando depende de los argumentos.
+COMANDOS = {
+    "undo": "Deshacer", "redo_or_repeat": "Rehacer", "redo": "Rehacer",
+    "soft_undo": "Deshacer suave", "soft_redo": "Rehacer suave",
+    "copy": "Copiar", "cut": "Cortar", "paste": "Pegar",
+    "paste_and_indent": "Pegar con sangría", "select_all": "Seleccionar todo",
+    "indent": "Aumentar sangría", "unindent": "Reducir sangría", "reindent": "Rehacer sangría",
+    "swap_line_up": "Subir línea", "swap_line_down": "Bajar línea",
+    "duplicate_line": "Duplicar línea", "join_lines": "Unir líneas",
+    "transpose": "Transponer", "close_tag": "Cerrar etiqueta",
+    "set_mark": "Poner marca", "yank": "Recuperar (yank)",
+    "fold": "Plegar", "unfold": "Desplegar",
+    "single_selection": "Selección única",
+    "find_next": "Buscar siguiente", "replace_next": "Reemplazar siguiente",
+    "next_result": "Resultado siguiente",
+    "toggle_bookmark": "Poner/quitar marcador", "next_bookmark": "Marcador siguiente",
+    "prev_bookmark": "Marcador anterior", "clear_bookmarks": "Borrar marcadores",
+    "select_all_bookmarks": "Seleccionar todos los marcadores",
+    "next_misspelling": "Siguiente error ortográfico",
+    "prev_misspelling": "Error ortográfico anterior",
+    "revert_hunk": "Revertir bloque de cambios",
+    "revert_modification": "Revertir modificación",
+    "toggle_inline_diff": "Mostrar/ocultar diferencias en línea",
+    "toggle_side_bar": "Mostrar/ocultar barra lateral",
+    "toggle_show_open_files": "Mostrar/ocultar archivos abiertos",
+    "toggle_minimap": "Mostrar/ocultar minimapa",
+    "toggle_tabs": "Mostrar/ocultar pestañas",
+    "toggle_status_bar": "Mostrar/ocultar barra de estado",
+    "toggle_menu": "Mostrar/ocultar menú",
+    "toggle_full_screen": "Pantalla completa (activar/desactivar)",
+    "toggle_distraction_free": "Modo sin distracciones (activar/desactivar)",
+    "toggle_record_macro": "Grabar/detener macro",
+    ("show_panel", "panel", "console"): "Mostrar/ocultar consola",
+    ("show_panel", "panel", "output.find_results"): "Mostrar panel de resultados",
+    "build": "Compilar", "show_scope_name": "Mostrar nombre de ámbito",
+    "profile_plugins": "Analizar rendimiento de plugins",
+    "convert_syntax": "Convertir a .sublime-syntax",
+    "purchase_license": "Comprar licencia", "upgrade_license": "Mejorar licencia",
+    "remove_license": "Quitar licencia",
 }
 
 # Textos con números u otras partes variables
@@ -270,10 +384,14 @@ REGLAS = [
     (r"^Wrap [Pp]aragraph at (\d+) characters$", r"Ajustar párrafo a \1 caracteres"),
     (r"^Ruler: (\d+)$", r"Regla: \1"),
     (r"^Group (\d+)$", r"Grupo \1"),
+    (r"^Fold Level (\d+)$", r"Plegar nivel \1"),
+    (r"^Focus Selected Tab (\d+)$", r"Activar pestaña seleccionada \1"),
+    (r"^(UTF-\d+(?: [LB]E)?) with BOM$", r"\1 con BOM"),
+    (r"^\d+$", r"\g<0>"),
 ]
 
 SUFIJOS = ("…", "...")
-RE_CAPTION = re.compile(r'("caption"\s*:\s*")((?:[^"\\]|\\.)*)(")')
+RE_REGION = re.compile(r"^(%s) (\(.+\))$" % "|".join(map(re.escape, REGIONES)))
 
 
 def traducir_texto(original, sin_traducir):
@@ -285,6 +403,11 @@ def traducir_texto(original, sin_traducir):
             break
     if texto in T:
         return T[texto] + sufijo
+    if texto in NO_TRADUCIR:
+        return texto + sufijo
+    m = RE_REGION.match(texto)
+    if m:
+        return f"{REGIONES[m.group(1)]} {m.group(2)}" + sufijo
     for patron, reemplazo in REGLAS:
         if re.match(patron, texto):
             return re.sub(patron, reemplazo, texto) + sufijo
@@ -293,17 +416,72 @@ def traducir_texto(original, sin_traducir):
     return original
 
 
+def texto_comando(item):
+    """Texto en español para una opción sin "caption", o None si no se conoce."""
+    cmd = item.get("command")
+    if not cmd or cmd.startswith("$"):
+        return None  # listas dinámicas (sintaxis, macros, archivos recientes…)
+    args = item.get("args") or {}
+    for clave, valor in COMANDOS.items():
+        if isinstance(clave, tuple) and clave[0] == cmd and args.get(clave[1]) == clave[2]:
+            return valor
+    return COMANDOS.get(cmd)
+
+
+def quitar_comentarios(texto):
+    """Convierte el JSON de Sublime (con comentarios y comas finales) en JSON estándar."""
+    salida, i, n, en_cadena = [], 0, len(texto), False
+    while i < n:
+        c = texto[i]
+        if en_cadena:
+            salida.append(c)
+            if c == "\\" and i + 1 < n:
+                salida.append(texto[i + 1])
+                i += 2
+                continue
+            if c == '"':
+                en_cadena = False
+        elif c == '"':
+            en_cadena = True
+            salida.append(c)
+        elif texto.startswith("//", i):
+            while i < n and texto[i] != "\n":
+                i += 1
+            continue
+        elif texto.startswith("/*", i):
+            fin = texto.find("*/", i + 2)
+            i = n if fin == -1 else fin + 2
+            continue
+        else:
+            salida.append(c)
+        i += 1
+    return re.sub(r",(\s*[\]}])", r"\1", "".join(salida))
+
+
 def traducir_menu(contenido, sin_traducir):
+    """Devuelve (menú traducido en JSON, número de textos cambiados)."""
+    menu = json.loads(quitar_comentarios(contenido))
     contador = 0
 
-    def repl(m):
+    def recorrer(items):
         nonlocal contador
-        nuevo = traducir_texto(m.group(2), sin_traducir)
-        if nuevo != m.group(2):
-            contador += 1
-        return m.group(1) + nuevo + m.group(3)
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            if "caption" in item:
+                nuevo = traducir_texto(item["caption"], sin_traducir)
+                if nuevo != item["caption"]:
+                    item["caption"] = nuevo
+                    contador += 1
+            else:
+                nuevo = texto_comando(item)
+                if nuevo:
+                    item["caption"] = nuevo
+                    contador += 1
+            recorrer(item.get("children", []))
 
-    return RE_CAPTION.sub(repl, contenido), contador
+    recorrer(menu)
+    return json.dumps(menu, ensure_ascii=False, indent="\t") + "\n", contador
 
 
 def buscar(candidatos, es_dir=False):

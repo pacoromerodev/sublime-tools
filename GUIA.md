@@ -150,6 +150,11 @@ Haz estas pruebas una a una. Los atajos dan por hecho que intercambiaste Control
 
 ### Menús en español
 - [ ] La barra de menús muestra **Archivo, Editar, Selección, Buscar, Ver, Ir…**
+- [ ] **Editar** muestra **Deshacer, Rehacer, Cortar, Copiar, Pegar**.
+- [ ] Clic derecho en el texto muestra **Cortar, Copiar, Pegar…**, y en una pestaña **Cerrar pestaña, Cerrar las demás pestañas…**
+- [ ] Al terminar, el instalador **no** muestra "Quedan … textos en inglés".
+
+Algunas opciones las pone macOS y siempre salen en inglés: *Services*, *Hide*, *Quit*, el menú *Window* y, en Editar, *Start Dictation* y *Emoji & Symbols*.
 
 ### Paquetes instalados
 1. Pulsa **Ctrl+Shift+P** (paleta de comandos).
@@ -254,7 +259,7 @@ Para quitar también el comando `subl`: `rm ~/bin/subl`.
 | Los paquetes no se instalan | Paleta → **Package Control: Satisfy Libraries** y luego reinicia Sublime. Si sigue igual, revisa el registro en **Ver → Mostrar consola** |
 | **Ctrl+H** oculta Sublime | macOS reserva ⌘H para ocultar aplicaciones. Usa **Ctrl+R**, que también abre Reemplazar |
 | **F3** sube el brillo o el volumen | Pulsa **fn+F3**, o activa "Usar F1, F2, etc. como teclas de función estándar" en Ajustes del Sistema → Teclado |
-| Algún menú sigue en inglés | El instalador lista al final los textos que no ha traducido. Añádelos al diccionario `T` de `traducir_sublime.py` y vuelve a ejecutarlo |
+| Algún menú sigue en inglés | Las opciones que añade macOS (Services, Hide, Quit, el menú Window, Start Dictation) siempre salen en inglés. Para el resto, el instalador lista al final los textos que no ha traducido: añádelos al diccionario `T` de `traducir_sublime.py` y vuelve a ejecutarlo |
 | Tras actualizar Sublime, los menús vuelven al inglés | Ejecuta de nuevo `./install.sh` |
 | `subl: command not found` | Abre una Terminal nueva. Si sigue, ejecuta `source ~/.zshrc` |
 | `permission denied: ./install.sh` | Ejecuta `chmod +x install.sh` |
